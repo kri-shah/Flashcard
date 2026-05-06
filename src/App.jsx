@@ -143,7 +143,14 @@ const FontStyle = () => (
   <style>{`
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
 
-    .flip-scene { perspective: 1200px; }
+    .flip-scene {
+      perspective: 1200px;
+      outline: none;
+    }
+    .flip-scene:focus,
+    .flip-scene:focus-visible {
+      outline: none;
+    }
     .flip-card {
       position: relative;
       width: 100%;
@@ -632,7 +639,7 @@ const Study = ({ deck, onBack }) => {
                 flip();
               }
             }}
-            className="flip-scene w-full select-none cursor-pointer"
+            className="flip-scene w-full select-none cursor-pointer outline-none focus:outline-none focus-visible:outline-none"
             aria-label="Flip card"
           >
             <div
