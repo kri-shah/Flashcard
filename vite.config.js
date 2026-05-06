@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig({
+// GitHub Pages project URL: https://kri-shah.github.io/Flashcard/
+// https://github.com/kri-shah/Flashcard
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/Flashcard/' : '/',
   plugins: [react()],
-})
+}))
